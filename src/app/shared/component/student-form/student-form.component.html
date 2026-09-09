@@ -1,0 +1,57 @@
+<div class="card">
+
+   <div class="card-header bg-primary"></div>
+
+
+   <form action="" #studentForm="ngForm" (ngSubmit)="addStudent()">
+     <div class="card-body">
+
+       <div class="row">
+         <div class="col-md-6">
+           <div class="form-group">
+                   <label for="">First name</label>
+                   <input type="text" name="fname" ngModel class="form-control">
+           </div>
+
+         </div>
+
+         <div class="col-md-6">
+           <div class="form-group">
+                   <label for="">Last name</label>
+                   <input type="text" name="lname" ngModel  class="form-control">
+           </div>
+
+         </div>
+       </div>
+
+
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" name="email" ngModel  class="form-control">
+            </div>
+
+             <div class="form-group">
+                <label for="">Contact</label>
+                <input type="text" name="contact" ngModel  class="form-control">
+            </div>
+
+             <div class="form-group">
+                <label for="">City</label>
+                <input type="text" name="city" ngModel  class="form-control">
+            </div>
+             <div class="form-group">
+                  <label for="">is Active</label>
+                  <select type="text" class="form-control" name="isActive" ngModel>
+                        <option [ngValue]="true">Yes</option>
+                        <option [ngValue]="false">No</option>
+                   </select>
+             </div>
+    </div>
+
+     <div class="card-footer">
+        <button mat-stroked-button  *ngIf="!IsInEditMode" color="warn" class=" form-control"> Add Student</button>
+        <button mat-stroked-button *ngIf="IsInEditMode"  color="primary" (click)="onUpdate()" class=" form-control"> Update Student</button>
+      </div>
+  </form>
+
+</div>

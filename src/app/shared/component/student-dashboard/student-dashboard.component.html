@@ -1,0 +1,13 @@
+<div class="container">
+      <div class="row">
+        <div class="col-md-4 mt-5">
+            <app-student-form [getEditObj]="editStdObj"
+             (eminewObj)="getAdd($event)"
+               (emitUpdateObj)="getUpdate($event)"
+             ></app-student-form>
+        </div>
+
+        <div class="col-md-8 mt-5">
+          <app-student-table [studentArr]="studentArr" (emitEditObj)="getEdit($event)"></app-student-table>
+        </div>
+</div>

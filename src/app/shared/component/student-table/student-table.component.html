@@ -1,0 +1,34 @@
+<div class="card">
+   <div class="card-header text-center bg-primary text-light"> <h4>Student Form</h4>  </div>
+    <div class="card-body">
+       <div class="table-responsive">
+         <table class="table table-bordered">
+           <thead>
+                <tr>
+                 <td>Sr.NO</td>
+                 <td>Full name </td>
+                 <td>Email</td>
+                 <td>Contact</td>
+                 <td>IS Active</td>
+                 <td>Edit</td>
+                 <td>Remove</td>
+                </tr>
+               </thead>
+
+
+             <tbody>
+                <tr *ngFor="let std of studentArr;index as i ;trackBy:studentTrack">
+                   <td>{{i+1}}</td>
+                   <td>{{std.fname}} {{std.lname}}</td>
+                   <td>{{std.email}}</td>
+                   <td>{{std.contact}}</td>
+                   <td>{{std.isActive ? "Yes":"No"}}</td>
+                   <td><button class="btn btn-block" mat-stroked-button color="primary" (click)="onEdit(std)"><mat-icon>edit</mat-icon></button></td>
+                   <td><button class="btn btn-block" mat-stroked-button color="warn" (click)="onRemove(std.id)"><mat-icon>delete</mat-icon></button></td>
+                </tr>
+             </tbody>
+         </table>
+
+       </div>
+    </div>
+</div>
