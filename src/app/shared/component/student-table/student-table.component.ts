@@ -12,39 +12,40 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class StudentTableComponent implements OnInit {
 
-  constructor( private _snackbar:MatSnackBar,private _matDialog:MatDialog) { }
+  constructor(private _snackbar: MatSnackBar, private _matDialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   @Output() emitEditObj = new EventEmitter<Istudent>()
-  @Input() studentArr!:Istudent[]
+  @Input() studentArr!: Istudent[]
 
-   studentTrack(index :Number ,std:Istudent){
-        return std.id;
-   }
+  studentTrack(index: Number, std: Istudent) {
+    return std.id;
+  }
 
-   onEdit(std:Istudent){
-      this.emitEditObj.emit(std);
-   }
+  onEdit(std: Istudent) {
+    this.emitEditObj.emit(std);
+  }
 
 
-   onRemove(id:Number){
-         let  config = new MatDialogConfig();
-               config.disableClose= true;
-              config.width = '800px';
-         let  matRef = this._matDialog.open(GetConfirmComponent,config);
-          matRef.afterClosed().subscribe(flag=>{
-            if(flag){
-               let getIndex = this.studentArr.findIndex(ele=>ele.id===id);
-                if(getIndex>-1){
-                     this.studentArr.splice(getIndex,1);
-                   this._snackbar.open('deleted successfully','close',{
-                            duration:3000
-                   })
-                  }
-
-                }
+  onRemove(id: Number) {
+    let config = new MatDialogConfig();
+    config.disableClose = true;
+    config.width = '800px';
+    config.data = `Are you sure you want to delete with id  ${id}`
+    let matRef = this._matDialog.open(GetConfirmComponent, config);
+    matRef.afterClosed().subscribe(flag => {
+      if (flag) {
+        let getIndex = this.studentArr.findIndex(ele => ele.id === id);
+        if (getIndex > -1) {
+          this.studentArr.splice(getIndex, 1);
+          this._snackbar.open('deleted successfully', 'close', {
+            duration: 3000,
           })
-   }
+        }
+
+      }
+    })
+  }
 }

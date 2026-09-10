@@ -1,8 +1,8 @@
 <h2 class="font-weight-bold">
-         Are you sure u want  to delete
+     {{removeMsg || ' are u sure ' }}
 </h2>
 
-<div>
+<div class="d-flex justify-content-between">
       <button mat-stroked-button color="primary" (click)="onClose(true)">Yes</button>
       <button mat-stroked-button color="warn" (click)="onClose(false)">No</button>
 </div>

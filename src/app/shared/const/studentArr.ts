@@ -11,7 +11,7 @@ export const students = [
      id:1
   },
   {
-      id:1,
+      id:2,
     fname: 'Soni',
     lname: 'Kumari',
     city: 'Delhi',
@@ -20,7 +20,7 @@ export const students = [
     isActive: false
   },
   {
-     id:1,
+     id:3,
     fname: 'Pradeep',
     lname: 'Rawat',
     city: 'Mumbai',
@@ -29,7 +29,7 @@ export const students = [
     isActive: true
   },
   {
-     id:1,
+     id:4,
     fname: 'Amit',
     lname: 'Sharma',
     city: 'Nagpur',
@@ -38,7 +38,7 @@ export const students = [
     isActive: true
   },
   {
-     id:1,
+     id:5,
     fname: 'Neha',
     lname: 'Verma',
     city: 'Bangalore',

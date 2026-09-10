@@ -7,12 +7,8 @@ import { StudentFormComponent } from './shared/component/student-form/student-fo
 import { StudentTableComponent } from './shared/component/student-table/student-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import  { MatIconModule } from "@angular/material/icon"
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-
-import { MatDialogModule } from '@angular/material/dialog';
 import { GetConfirmComponent } from './shared/component/get-confirm/get-confirm.component';
-
+import {MaterialModule} from './shared/material/material.module'
 
 @NgModule({
   declarations: [
@@ -26,9 +22,7 @@ import { GetConfirmComponent } from './shared/component/get-confirm/get-confirm.
     BrowserModule,
     BrowserAnimationsModule ,
     FormsModule,
-    MatIconModule ,
-    MatSnackBarModule ,
-    MatDialogModule
+    MaterialModule
 
   ],
   providers: [],
